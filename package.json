@@ -3,33 +3,33 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start -p 3000",
-    "deploy": "node_modules/.bin/now",
+    "deploy": "node_modules/.bin/now && node_modules/.bin/now alias",
     "lint": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
     "fix": "node_modules/.bin/standard --fix"
   },
   "keywords": [],
   "author": "",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "ISC",
   "dependencies": {
     "firebase": "^5.7.3",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^7.0.2",
-    "next-redux-wrapper": "^2.1.0",
-    "now": "^13.0.4",
+    "now": "^13.0.6",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-redux": "^6.0.0",
-    "react-redux-firebase": "^3.0.0-alpha.6",
-    "redux": "^4.0.1",
-    "redux-firestore": "^0.6.2"
+    "react-stripe-elements": "^2.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "snazzy": "^8.0.0",
-    "standard": "*"
+    "standard": "^12.0.1"
   },
   "standard": {
     "parser": "babel-eslint"

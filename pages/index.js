@@ -1,24 +1,20 @@
 import React from 'react'
-import { compose } from 'redux'
-import { firebaseConnect } from 'react-redux-firebase'
-import { connect } from 'react-redux'
 
-class Index extends React.Component {
+import {
+  Head,
+  Navbar
+} from '../components'
+
+class Home extends React.Component {
   render () {
-    console.log(this.props)
     return (
-      <div>
+      <section>
+        <Head />
+        <Navbar />
         foobar
-      </div>
+      </section>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.firebase.auth
-})
-
-export default compose(
-  firebaseConnect(),
-  connect(mapStateToProps)
-)(Index)
+export default Home

@@ -1,36 +1,60 @@
 import React from 'react'
-import { Provider } from 'react-redux'
 import App, { Container } from 'next/app'
-import withRedux from 'next-redux-wrapper'
-import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
+
+import firebase from '../lib/firebase'
 
 import {
-  makeStore,
-  rrfProps
-} from '../redux'
+  Provider,
+  Consumer
+} from '../components'
 
-class MyApp extends App {
-  static async getInitialProps ({ Component, ctx }) {
-    // we can dispatch actions from here as well
-    ctx.store.dispatch({ type: 'FOO', payload: 'foo' })
+// using this additional container to bind firebase auth listener to global
+class BoundContainer extends React.Component {
+  constructor (props) {
+    super(props)
+    this.authListener = this.authListener.bind(this)
+    this.authListener(props.global)
+  }
 
-    const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {}
+  authListener = (global) => {
+    this.stateListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        global.setCurrentUser(user)
+      } else {
+        // user is not logged in
+        return null
+      }
+    })
+  }
 
-    return { pageProps }
+  componentWillUnmount = () => {
+    this.stateListener = undefined
+    this.authListener = undefined
   }
 
   render () {
-    const { Component, pageProps, store } = this.props
+    const { Component, pageProps } = this.props
+
+    return (
+      <React.Fragment>
+        <Component {...pageProps} />
+      </React.Fragment>
+    )
+  }
+}
+
+class AppContainer extends App {
+  render () {
     return (
       <Container>
-        <Provider store={store}>
-          <ReactReduxFirebaseProvider {...rrfProps}>
-            <Component {...pageProps} />
-          </ReactReduxFirebaseProvider>
+        <Provider>
+          <Consumer>
+            {global => <BoundContainer global={global} {...this.props} />}
+          </Consumer>
         </Provider>
       </Container>
     )
   }
 }
 
-export default withRedux(makeStore)(MyApp)
+export default AppContainer
