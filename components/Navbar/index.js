@@ -23,12 +23,12 @@ class Navbar extends React.Component {
             Logo
           </div>
         </Link>
+        <div>
+          <Link href='/users'>
+            Users
+          </Link>
+        </div>
         <div className='navbar-action-container'>
-          <div>
-            <Link href='/contacts'>
-              Contacts
-            </Link>
-          </div>
           <Consumer>
             {global => {
               if (global.currentUser.uid) {
