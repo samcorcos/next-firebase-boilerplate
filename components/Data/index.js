@@ -9,6 +9,8 @@ import React from 'react'
  * See [this article](https://medium.com/merrickchristensen/function-as-child-components-5f3920a9ace9)
  * for more information on why function-as-child components are awesome for this use case
  *
+ * For basic usage of this component, see [this gist](https://gist.github.com/samcorcos/8e58decdaea1181099c22d2e149efdb0)
+ *
  * @param {Object} props.query - the reference to the database query. e.g. db.collection('orders')
  * @param {string} props.type - either 'document' or 'collection'
  * @param {function} props.children - props.children must be a function
@@ -48,7 +50,10 @@ class Data extends React.Component {
       })
     } else {
       this.setState({
-        data: snap.data(),
+        data: {
+          id: snap.id,
+          ...snap.data()
+        },
         loading: false
       })
     }

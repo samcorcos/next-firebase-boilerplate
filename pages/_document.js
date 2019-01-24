@@ -12,6 +12,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta name='google-site-verification' content='uOitPzPZYV_7ATO_jAOL-BciOi97wQTbdr8hiDEMZ7Y' />
           <style>{`
+            /* https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/ */
             /* http://meyerweb.com/eric/tools/css/reset/ 
             v2.0 | 20110126
             License: none (public domain)
@@ -30,38 +31,37 @@ export default class MyDocument extends Document {
             figure, figcaption, footer, header, hgroup, 
             menu, nav, output, ruby, section, summary,
             time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-            }
-            /* HTML5 display-role reset for older browsers */
-            article, aside, details, figcaption, figure, 
-            footer, header, hgroup, menu, nav, section {
-            display: block;
+              margin: 0;
+              padding: 0;
+              border: 0;
+              font-size: 100%;
+              font: inherit;
+              vertical-align: baseline;
+              box-sizing: border-box;
+              display: flex;
+              flex-direction: column;
+              font-family: Roboto, sans-serif;
             }
             body {
-            line-height: 1;
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
+              line-height: 1;
+              display: flex;
+              min-height: 100vh;
+              flex-direction: column;
             }
             ol, ul {
-            list-style: none;
+              list-style: none;
             }
             blockquote, q {
-            quotes: none;
+              quotes: none;
             }
             blockquote:before, blockquote:after,
             q:before, q:after {
-            content: '';
-            content: none;
+              content: '';
+              content: none;
             }
             table {
-            border-collapse: collapse;
-            border-spacing: 0;
+              border-collapse: collapse;
+              border-spacing: 0;
             }  
           `}</style>
           <script src='https://js.stripe.com/v3/' />

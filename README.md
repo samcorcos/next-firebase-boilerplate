@@ -1,6 +1,6 @@
 # Next Firebase Boilerplate
 
-This app is connected to Firebase and uses the Context API for managing global state.
+This app is connected to Firebase and uses the Context API for managing store state.
 
 https://blog.bitsrc.io/react-context-api-a-replacement-for-redux-6e20790492b3
 
@@ -8,6 +8,10 @@ Firebase handles user information in a way that is not always intuitive. The `fi
 
 Use Callable functions when possible (https://firebase.google.com/docs/functions/callable) as they make endpoint security much easier and cuts down on boilerplate.
 
-- [ ] Need to figure out a better abstraction for `global` state and functions within `Provider` so I don't have to list them all in one mondo `class`
+- [ ] Need to figure out a better abstraction for `store` state and functions within `Provider` so I don't have to list them all in one mondo `class`
 - [x] Need a better way to bind DB collections to components (currently using `onCollectionUpdate` and a bunch of lifecycle bindings)
   - [ ] show how to use the `Data` component with better documentation
+
+## Quirks
+
+Everything is `display: flex; flex-direction: column;` by default

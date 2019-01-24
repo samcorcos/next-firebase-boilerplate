@@ -3,7 +3,7 @@ import {
   extraLarge,
   medium,
   small
-} from '../../lib/mediaQueries'
+} from '../../lib/MediaQueries'
 
 class Layout extends React.Component {
   render () {
