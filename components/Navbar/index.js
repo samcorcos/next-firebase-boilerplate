@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-
-import Colors from '../../lib/Colors'
+import Colors from '@corcos/lib/dist/colors'
 
 import {
-  Consumer,
   Button
 } from '../'
+
+import Context from '../../lib/context'
 
 const SignUpSignIn = (self, store) => {
   if (!store.currentUser.uid) {
@@ -27,6 +27,7 @@ const SignUpSignIn = (self, store) => {
             color: ${Colors.cyan[200]};
           }
           .auth-container {
+            display: flex;
             flex-direction: row;
             align-items: center;
           }
@@ -58,7 +59,7 @@ class Navbar extends React.Component {
             <div className='brand-title'>My App</div>
           </div>
         </Link>
-        <Consumer>
+        <Context.Consumer>
           {store => {
             return (
               <div className='navbar-action-container'>
@@ -66,7 +67,7 @@ class Navbar extends React.Component {
               </div>
             )
           }}
-        </Consumer>
+        </Context.Consumer>
 
         <style jsx>{`
           .brand-container {
@@ -83,6 +84,7 @@ class Navbar extends React.Component {
             font-weight: 300;
           }
           .navbar {
+            display: flex;
             height: 60px;
             width: 100%;
             justify-content: space-between;

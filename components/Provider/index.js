@@ -1,14 +1,7 @@
 import React from 'react'
 
 import firebase from '../../lib/firebase'
-
-// NOTE this is the initial, store state of the app
-const initialState = {
-  currentUser: {},
-  authModalType: null // we want to include this on store state because we want to allow multiple components to trigger it
-}
-
-export const Context = React.createContext(initialState)
+import Context, { initialState } from '../../lib/context'
 
 /**
  * This component is the Context Provider using the new React Context API that
@@ -18,19 +11,17 @@ export const Context = React.createContext(initialState)
 class Provider extends React.Component {
   state = initialState
 
+  setAuthModalType = (type = 'signUp') => {
+    this.setState({ authModalType: type })
+  }
+
   setCurrentUser = (currentUser) => {
     this.setState({ currentUser })
   }
 
-  // signout needs to be handled at the top-level because we need to reset the cache
-  // or firebase doesnt know whether or not the user is signed out or is checking
-  signOut = () => {
-    firebase.auth().signOut()
-    this.setState({ ...initialState })
-  }
-
-  setAuthModalType = (type) => {
-    this.setState({ authModalType: type })
+  signOut = async () => {
+    await firebase.auth().signOut()
+    this.setState({ initialState })
   }
 
   render () {

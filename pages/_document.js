@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <meta name='google-site-verification' content='uOitPzPZYV_7ATO_jAOL-BciOi97wQTbdr8hiDEMZ7Y' />
+          <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' />
           <style>{`
             /* https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/ */
             /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -36,10 +36,10 @@ export default class MyDocument extends Document {
               border: 0;
               font-size: 100%;
               font: inherit;
-              vertical-align: baseline;
-              box-sizing: border-box;
               display: flex;
               flex-direction: column;
+              vertical-align: baseline;
+              box-sizing: border-box;
               font-family: Roboto, sans-serif;
             }
             body {
@@ -63,8 +63,12 @@ export default class MyDocument extends Document {
               border-collapse: collapse;
               border-spacing: 0;
             }  
+            #__next {
+              display: flex;
+              flex: 1;
+              flex-direction: column;
+            }
           `}</style>
-          <script src='https://js.stripe.com/v3/' />
         </Head>
         <body className='custom_class'>
           <Main />

@@ -1,11 +1,11 @@
 import React from 'react'
 
 import firebase from '../../lib/firebase'
+import Context from '../../lib/context'
 
 import {
   Input,
-  Modal,
-  Consumer
+  Modal
 } from '../'
 
 const PasswordReset = (self, store) => {
@@ -181,7 +181,7 @@ class AuthModal extends React.Component {
 
   render () {
     return (
-      <Consumer>
+      <Context.Consumer>
         {store => {
           return (
             <Modal isOpen={store.authModalType} close={() => store.setAuthModalType(null)}>
@@ -202,7 +202,7 @@ class AuthModal extends React.Component {
             </Modal>
           )
         }}
-      </Consumer>
+      </Context.Consumer>
     )
   }
 }

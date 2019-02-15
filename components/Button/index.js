@@ -1,7 +1,6 @@
 import React from 'react'
-
-import Colors from '../../lib/Colors'
-import Elevation from '../../lib/Elevation'
+import Colors from '@corcos/lib/dist/colors'
+import Elevation from '@corcos/lib/dist/elevation'
 
 class Button extends React.Component {
   render () {
