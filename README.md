@@ -15,3 +15,13 @@ Use Callable functions when possible (https://firebase.google.com/docs/functions
 ## Quirks
 
 Everything is `display: flex; flex-direction: column;` by default
+
+## Installation
+
+`npm i`
+
+## Getting Started
+
+Check the `lib/context.js` file and make sure it does the things you want it to do.
+
+Update your credentials in `lib/firebase.js`
