@@ -1,13 +1,12 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import { AuthBindings } from '@corcos/components'
+import { AuthBindings, AuthModal } from '@corcos/components'
 
 import firebase from '../lib/firebase'
 import Context from '../lib/context'
 
 import {
-  Provider,
-  AuthModal
+  Provider
 } from '../components'
 
 // using this additional container to bind firebase auth listener to store
@@ -21,7 +20,7 @@ class _App extends App {
           <Context.Consumer>
             {store => (
               <>
-                <AuthModal />
+                <AuthModal firebase={firebase} store={store} context={Context} />
                 <AuthBindings firebase={firebase} store={store} />
                 <Component style={{ height: 1000 }} store={store} {...pageProps} />
               </>

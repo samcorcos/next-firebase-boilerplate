@@ -1,10 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
-import Colors from '@corcos/lib/dist/colors'
-
+import {
+  colors
+} from '@corcos/lib'
 import {
   Button
-} from '../'
+} from '@corcos/components'
 
 import Context from '../../lib/context'
 
@@ -17,14 +18,14 @@ const SignUpSignIn = (self, store) => {
 
         <style jsx>{`
           .anchor {
-            color: ${Colors.cyan[500]};
+            color: ${colors.cyan[500]};
             cursor: pointer;
             text-decoration: underline;
             transition: all 0.1s ease;
             margin-right: 10px;
           }
           .anchor:hover {
-            color: ${Colors.cyan[200]};
+            color: ${colors.cyan[200]};
           }
           .auth-container {
             display: flex;
