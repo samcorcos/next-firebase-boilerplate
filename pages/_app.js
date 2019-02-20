@@ -6,9 +6,9 @@ import firebase from '../lib/firebase'
 import Context from '../lib/context'
 
 import {
-  Provider
+  Provider,
+  AuthModal
 } from '../components'
-import AuthModal from '../components/AuthModal'
 
 // using this additional container to bind firebase auth listener to store
 class _App extends App {

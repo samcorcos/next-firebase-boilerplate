@@ -1,4 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
+import { colors } from '@corcos/lib'
 
 export default class MyDocument extends Document {
   static async getInitialProps (ctx) {
@@ -10,7 +11,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' />
+          <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,600' rel='stylesheet' />
           <style>{`
             /* https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/ */
             /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -40,7 +41,11 @@ export default class MyDocument extends Document {
               flex-direction: column;
               vertical-align: baseline;
               box-sizing: border-box;
+              font-size: 16px;
               font-family: Roboto, sans-serif;
+            }
+            a {
+              color: ${colors.blue[500]};
             }
             body {
               line-height: 1;
