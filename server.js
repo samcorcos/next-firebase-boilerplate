@@ -4,7 +4,6 @@
 const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
-require('@babel/polyfill')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })

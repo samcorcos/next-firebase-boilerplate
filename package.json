@@ -20,7 +20,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
     "@corcos/components": "latest",
     "@corcos/lib": "latest",
     "firebase": "^5.7.3",
