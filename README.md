@@ -22,6 +22,8 @@ Everything is `display: flex; flex-direction: column;` by default
 
 ## Getting Started
 
-Check the `lib/context.js` file and make sure it does the things you want it to do.
-
-Update your credentials in `lib/firebase.js`
+1. `npm i`
+2. Update `lib/context.js`
+3. Update `lib/firebase.js`
+4. ???
+5. Profit
