@@ -25,5 +25,6 @@ https://github.com/zeit/next.js/issues/6073
 1. `npm i`
 2. Update `lib/context.js`
 3. Update `lib/firebase.js`
+4. Delete git `rm -rf .git`
 4. ???
 5. Profit
