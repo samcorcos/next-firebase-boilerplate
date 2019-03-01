@@ -1,9 +1,11 @@
 {
   "version": 2,
+  "public": true,
   "builds": [
-    { 
-      "src": "package.json", 
-      "use": "@now/next" 
+    {
+      "src": "package.json",
+      "use": "@now/next@canary",
+      "config": { "maxLambdaSize": "10mb" }
     }
   ]
 }

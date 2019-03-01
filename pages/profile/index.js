@@ -9,7 +9,7 @@ import {
 class Users extends React.Component {
   render () {
     return (
-      <React.Fragment>
+      <>
         <Head />
         <Navbar />
         <Layout>
@@ -19,7 +19,7 @@ class Users extends React.Component {
         <style jsx>{`
           
         `}</style>
-      </React.Fragment>
+      </>
     )
   }
 }

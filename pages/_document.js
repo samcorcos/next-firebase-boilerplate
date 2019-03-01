@@ -68,6 +68,12 @@ export default class MyDocument extends Document {
               border-collapse: collapse;
               border-spacing: 0;
             }  
+            .row {
+              flex-direction: row;
+            }
+            .column {
+              flex-direction: column;
+            }
             #__next {
               display: flex;
               flex: 1;

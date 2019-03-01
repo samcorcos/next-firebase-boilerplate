@@ -8,11 +8,11 @@ import {
 class Home extends React.Component {
   render () {
     return (
-      <section>
+      <>
         <Head />
         <Navbar />
         foobar
-      </section>
+      </>
     )
   }
 }

@@ -8,13 +8,13 @@ Firebase handles user information in a way that is not always intuitive. The `fi
 
 Use Callable functions when possible (https://firebase.google.com/docs/functions/callable) as they make endpoint security much easier and cuts down on boilerplate.
 
-- [ ] Need to figure out a better abstraction for `store` state and functions within `Provider` so I don't have to list them all in one mondo `class`
-- [x] Need a better way to bind DB collections to components (currently using `onCollectionUpdate` and a bunch of lifecycle bindings)
-  - [ ] show how to use the `Data` component with better documentation
-
 ## Quirks
 
 Everything is `display: flex; flex-direction: column;` by default
+
+There is a lot of extra tooling necessary to get Firebase to work with Next, mostly because Firebase was not built to work with universal apps:
+
+https://github.com/zeit/next.js/issues/6073
 
 ## Installation
 
