@@ -21,7 +21,7 @@ class Provider extends React.Component {
 
   signOut = async () => {
     await firebase.auth().signOut()
-    this.setState({ initialState })
+    this.setState({ ...initialState })
   }
 
   render () {
