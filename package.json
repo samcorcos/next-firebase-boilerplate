@@ -24,7 +24,7 @@
   "author": "Sam Corcos <sam@corcos.io>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "@corcos/components": "^1.13.8",
+    "@corcos/components": "^1.14.1",
     "@corcos/lib": "^1.0.16",
     "firebase": "^5.7.3",
     "isomorphic-unfetch": "^3.0.0",
