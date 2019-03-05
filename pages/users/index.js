@@ -1,12 +1,14 @@
 import React from 'react'
+import {
+  Data,
+  Layout
+} from '@corcos/components'
 
 import { db } from '../../lib/firebase'
 
 import {
   Head,
-  Navbar,
-  Layout,
-  Data
+  Navbar
 } from '../../components'
 
 // demonstrates how to use the `Data` component
@@ -14,7 +16,7 @@ import {
 class Users extends React.Component {
   render () {
     return (
-      <React.Fragment>
+      <>
         <Head />
         <Navbar />
         <Layout>
@@ -32,19 +34,19 @@ class Users extends React.Component {
               }}
             </Data>
           </div>
-        </Layout>
 
-        <style jsx>{`
-          .title {
-            font-size: 32px;
-            margin-bottom: 5px;
-          }
-          .users {
-            display: flex;
-            flex-direction: column;
-          }
-        `}</style>
-      </React.Fragment>
+          <style jsx>{`
+            .title {
+              font-size: 32px;
+              margin-bottom: 5px;
+            }
+            .users {
+              display: flex;
+              flex-direction: column;
+            }
+          `}</style>
+        </Layout>
+      </>
     )
   }
 }

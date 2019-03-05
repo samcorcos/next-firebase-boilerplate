@@ -1,9 +1,11 @@
 import React from 'react'
+import {
+  Layout
+} from '@corcos/components'
 
 import {
   Head,
-  Navbar,
-  Layout
+  Navbar
 } from '../../components'
 
 class Users extends React.Component {
@@ -14,11 +16,11 @@ class Users extends React.Component {
         <Navbar />
         <Layout>
           User Profile page
-        </Layout>
 
-        <style jsx>{`
+          <style jsx>{`
           
-        `}</style>
+          `}</style>
+        </Layout>
       </>
     )
   }
