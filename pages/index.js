@@ -2,6 +2,7 @@ import React from 'react'
 
 import {
   Head,
+  Format,
   Navbar
 } from '../components'
 
@@ -10,6 +11,7 @@ class Home extends React.Component {
     return (
       <>
         <Head />
+        <Format />
         <Navbar />
         foobar
       </>

@@ -8,6 +8,7 @@ import { db } from '../../lib/firebase'
 
 import {
   Head,
+  Format,
   Navbar
 } from '../../components'
 
@@ -18,6 +19,7 @@ class Users extends React.Component {
     return (
       <>
         <Head />
+        <Format />
         <Navbar />
         <Layout>
           <div className='users'>

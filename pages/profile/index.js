@@ -5,6 +5,7 @@ import {
 
 import {
   Head,
+  Format,
   Navbar
 } from '../../components'
 
@@ -13,6 +14,7 @@ class Users extends React.Component {
     return (
       <>
         <Head />
+        <Format />
         <Navbar />
         <Layout>
           User Profile page
