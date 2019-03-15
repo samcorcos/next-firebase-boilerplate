@@ -35,9 +35,14 @@ const withAssetRelocator = (nextConfig = {}) => {
 module.exports = withAssetRelocator({
   target: 'serverless',
   // https://github.com/zeit/next.js/blob/canary/examples/with-universal-configuration-runtime/next.config.js
-  publicRuntimeConfig: {
-    NODE_ENV: process.env.NODE_ENV
-  },
+  // publicRuntimeConfig: {
+  //   NODE_ENV: process.env.NODE_ENV
+  // },
+  // https://github.com/zeit/next.js/blob/master/errors/serverless-publicRuntimeConfig.md
+  // https://github.com/zeit/next.js/blob/master/errors/env-key-not-allowed.md
+  // env: {
+  //   NODE_ENV: process.env.NODE_ENV
+  // },
   exportPathMap: function () {
     return {
       '/': { page: '/' }
