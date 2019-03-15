@@ -36,7 +36,7 @@
   "devDependencies": {
     "@types/react": "^16.8.4",
     "@zeit/next-typescript": "^1.1.1",
-    "@zeit/webpack-asset-relocator-loader": "^0.2.3",
+    "@zeit/webpack-asset-relocator-loader": "^0.1.x",
     "babel-eslint": "^10.0.1",
     "snazzy": "^8.0.0",
     "standard": "^12.0.1"
