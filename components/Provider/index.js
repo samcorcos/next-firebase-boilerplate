@@ -11,10 +11,6 @@ import Context, { initialState } from '../../lib/context'
 class Provider extends React.Component {
   state = initialState
 
-  setAuthModalType = (type = 'signUp') => {
-    this.setState({ authModalType: type })
-  }
-
   setCurrentUser = (currentUser) => {
     this.setState({ currentUser })
   }
@@ -24,6 +20,11 @@ class Provider extends React.Component {
     this.setState({ ...initialState })
   }
 
+  // simple key-value setter
+  set = (key, value) => {
+    this.setState({ [key]: value })
+  }
+
   render () {
     return (
       <Context.Provider
@@ -31,8 +32,8 @@ class Provider extends React.Component {
           // NOTE any actions defined in this component must be added to the value here as well
           ...this.state,
           setCurrentUser: this.setCurrentUser,
-          setAuthModalType: this.setAuthModalType,
-          signOut: this.signOut
+          signOut: this.signOut,
+          set: this.set
         }}>
         {this.props.children}
       </Context.Provider>

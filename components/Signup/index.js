@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { withRouter } from 'next/router'
 
 import firebase from '../../lib/firebase'
+import Context from '../../lib/context'
 
 /**
  * This component is used on the profile page to allow a user to sign up
@@ -25,6 +26,8 @@ class Signup extends React.Component {
       passwordConfirm: ''
     }
   }
+
+  static contextType = Context
 
   _handleSubmit = async () => {
     if (!/@/g.test(this.state.email)) {
@@ -81,12 +84,12 @@ class Signup extends React.Component {
             <div className='terms-row'>
               <input checked={this.state.terms} onChange={e => this.setState({ terms: e.target.checked })} type='checkbox' className='checkbox' />
               <div className='terms'>
-                I agree to the&nbsp;<Link href='/'><a>Terms and Conditions</a></Link>
+                I agree to the&nbsp;<Link href='#'><a>Terms and Conditions</a></Link>
               </div>
             </div>
             <div className='line' />
             <div className='has-account'>
-              Already have an account?&nbsp;<Link href='/login'><a>Log in</a></Link>
+              Already have an account?&nbsp;<a onClick={() => this.context.set('signUpOrLogIn', 'logIn')}>Log in</a>
             </div>
           </div>
 

@@ -7,10 +7,10 @@ import {
   Input,
   Button
 } from '@corcos/components'
-import Link from 'next/link'
 import { withRouter } from 'next/router'
 
 import firebase from '../../lib/firebase'
+import Context from '../../lib/context'
 
 class Login extends React.Component {
   constructor (props) {
@@ -21,6 +21,8 @@ class Login extends React.Component {
       password: ''
     }
   }
+
+  static contextType = Context
 
   _handleSubmit = async () => {
     if (!/@/g.test(this.state.email)) {
@@ -73,7 +75,7 @@ class Login extends React.Component {
             </div>
             <div className='line' />
             <div className='has-account'>
-              Don't have an account yet?&nbsp;<Link href='/signup'><a>Create one</a></Link>
+              Don't have an account yet?&nbsp;<a onClick={() => this.context.set('signUpOrLogIn', 'signUp')}>Create one</a>
             </div>
           </div>
 
@@ -117,6 +119,7 @@ class Login extends React.Component {
             }
             .title {
               font-size: 42px;
+              margin-top: 30px;
               margin-bottom: 30px;
               color: ${colors.grey[800]};
               text-align: center;

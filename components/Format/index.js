@@ -40,6 +40,7 @@ export default () => (
       a {
         color: ${colors.blue[500]};
         transition: opacity 0.2s ease;
+        cursor: pointer;
       }
       a:hover {
         opacity: 0.6;
