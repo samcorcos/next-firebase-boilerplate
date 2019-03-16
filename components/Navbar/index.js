@@ -1,31 +1,40 @@
 import React from 'react'
 import Link from 'next/link'
 import {
-  colors
-} from '@corcos/lib'
-import {
   Button
 } from '@corcos/components'
+import {
+  colors
+} from '@corcos/lib'
 
 import Context from '../../lib/context'
 
-const SignUpSignIn = (self, store) => {
-  if (!store.currentUser.uid) {
+const buttonStyle = {
+  color: colors.blue[500],
+  backgroundColor: 'white',
+  boxShadow: 'none',
+  border: `1px solid ${colors.blue[500]}`,
+  paddingBottom: 8,
+  paddingTop: 8
+}
+
+const SignUpSignIn = (self) => {
+  if (!self.context.currentUser.uid) {
     return (
       <div className='auth-container'>
-        <a className='anchor' onClick={() => store.setAuthModalType('signIn')}>Sign in</a>
-        <Button onClick={() => store.setAuthModalType('signUp')} text='Sign up' />
+        <Link href={{ pathname: '/profile', query: 'login' }}>
+          <a className='anchor'>Sign in</a>
+        </Link>
+        <Link href={{ pathname: '/profile', query: 'signup' }}>
+          <Button style={buttonStyle} onClick={() => {}} title='Sign up' />
+        </Link>
 
         <style jsx>{`
           .anchor {
-            color: ${colors.cyan[500]};
             cursor: pointer;
             text-decoration: underline;
             transition: all 0.1s ease;
             margin-right: 10px;
-          }
-          .anchor:hover {
-            color: ${colors.cyan[200]};
           }
           .auth-container {
             display: flex;
@@ -39,7 +48,7 @@ const SignUpSignIn = (self, store) => {
   return (
     <div>
       <Link href='profile'>
-        <a className='profile'>{store.currentUser.email}</a>
+        <a className='profile'>{self.context.currentUser.email}</a>
       </Link>
       <style jsx>{`
         .profile {
@@ -51,26 +60,25 @@ const SignUpSignIn = (self, store) => {
 }
 
 class Navbar extends React.Component {
+  static contextType = Context
+
   render () {
     return (
       <nav className='navbar'>
         <Link href='/'>
           <div className='brand-container'>
-            <div style={{ marginLeft: 15, height: 40, width: 40, borderRadius: '50%', backgroundColor: 'gray', cursor: 'pointer' }} />
-            <div className='brand-title'>My App</div>
+            <img src='/static/disco.svg' className='logo' />
+            <div className='brand-title'>MyApp</div>
           </div>
         </Link>
-        <Context.Consumer>
-          {store => {
-            return (
-              <div className='navbar-action-container'>
-                {SignUpSignIn(this, store)}
-              </div>
-            )
-          }}
-        </Context.Consumer>
+        <div className='navbar-action-container'>
+          {SignUpSignIn(this)}
+        </div>
 
         <style jsx>{`
+          .logo {
+            height: 70px;
+          }
           .brand-container {
             display: flex;
             flex-direction: row;
@@ -79,9 +87,8 @@ class Navbar extends React.Component {
             cursor: pointer;
           }
           .brand-title {
-            padding-left: 10px;
             font-size: 30px;
-            color: black;
+            color: ${colors.grey[800]};
             font-weight: 300;
           }
           .navbar {
@@ -91,7 +98,7 @@ class Navbar extends React.Component {
             justify-content: space-between;
             align-items: center;
             flex-direction: row;
-            border-bottom: 1px solid black;
+            border-bottom: 1px solid ${colors.grey[400]};
           }  
           .navbar-action-container {
             margin-right: 15px;

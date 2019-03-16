@@ -24,20 +24,25 @@ export default () => (
       figure, figcaption, footer, header, hgroup, 
       menu, nav, output, ruby, section, summary,
       time, mark, audio, video {
+        font: inherit;
         margin: 0;
         padding: 0;
         border: 0;
         font-size: 100%;
-        font: inherit;
         display: flex;
         flex-direction: column;
         vertical-align: baseline;
         box-sizing: border-box;
         font-size: 16px;
+        line-height: 1.3em;
         font-family: Roboto, sans-serif;
       }
       a {
         color: ${colors.blue[500]};
+        transition: opacity 0.2s ease;
+      }
+      a:hover {
+        opacity: 0.6;
       }
       body {
         line-height: 1;

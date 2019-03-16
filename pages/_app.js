@@ -20,7 +20,6 @@ class _App extends App {
           <Context.Consumer>
             {store => (
               <>
-                {/* <AuthModal firebase={firebase} store={store} context={Context} /> */}
                 <AuthBindings firebase={firebase} store={store} />
                 <Component style={{ height: 1000 }} store={store} {...pageProps} />
               </>
