@@ -9,6 +9,7 @@ import {
 import {
   Head,
   Format,
+  Footer,
   Navbar
 } from '../components'
 
@@ -31,6 +32,7 @@ class Home extends React.Component {
             </div>
           </Layout>
         </div>
+        <Footer />
 
         <style jsx>{`
           .title-col {
