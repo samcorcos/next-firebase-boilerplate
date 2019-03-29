@@ -2,8 +2,9 @@ import {
   colors
 } from '@corcos/lib'
 
-export default () => (
+export default (props) => (
   <>
+    {props.children}
     <style global jsx>{`
       /* https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/ */
       /* http://meyerweb.com/eric/tools/css/reset/ 
