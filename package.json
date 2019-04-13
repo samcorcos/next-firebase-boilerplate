@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node server.js",
+    "dev": "NODE_ENV=development next",
     "build": "next build",
     "export": "next export",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production next",
     "deploy": "now && now alias",
     "lint": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
     "fix": "node_modules/.bin/standard --fix"
@@ -23,7 +23,7 @@
   "dependencies": {
     "@corcos/components": "^1.19.5",
     "@corcos/lib": "^1.0.18",
-    "firebase": "^5.9.0",
+    "firebase": "^5.9.4",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.0.3",
     "react": "^16.8.4",

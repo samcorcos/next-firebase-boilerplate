@@ -46,9 +46,8 @@ class Users extends React.Component {
 
   render () {
     return (
-      <>
+      <Format>
         <Head />
-        <Format />
         <Navbar />
         {LoginStatus(this)}
         <Layout>
@@ -59,7 +58,7 @@ class Users extends React.Component {
           
           `}</style>
         </Layout>
-      </>
+      </Format>
     )
   }
 }

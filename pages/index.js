@@ -16,9 +16,8 @@ import {
 class Home extends React.Component {
   render () {
     return (
-      <>
+      <Format>
         <Head />
-        <Format />
         <Navbar />
         <div className='landing'>
           <Layout>
@@ -53,7 +52,7 @@ class Home extends React.Component {
             color: ${colors.grey[600]};
           }
         `}</style>
-      </>
+      </Format>
     )
   }
 }

@@ -17,9 +17,8 @@ import {
 class Users extends React.Component {
   render () {
     return (
-      <>
+      <Format>
         <Head />
-        <Format />
         <Navbar />
         <Layout>
           <div className='users'>
@@ -48,7 +47,7 @@ class Users extends React.Component {
             }
           `}</style>
         </Layout>
-      </>
+      </Format>
     )
   }
 }
