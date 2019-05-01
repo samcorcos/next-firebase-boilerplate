@@ -1,11 +1,12 @@
 import React from 'react'
-import Link from 'next/link'
 import {
   Button
 } from '@corcos/components'
+import Link from 'next/link'
 import {
   colors
 } from '@corcos/lib'
+import { withRouter } from 'next/router'
 
 import Context from '../../lib/context'
 
@@ -22,12 +23,18 @@ const SignUpSignIn = (self) => {
   if (!self.context.currentUser.uid) {
     return (
       <div className='auth-container'>
-        <Link href={{ pathname: '/profile', query: { type: 'login' } }}>
+        <div onClick={() => {
+          self.context.set('signUpOrLogIn', 'logIn')
+          self.props.router.push('/profile')
+        }}>
           <a className='anchor'>Sign in</a>
-        </Link>
-        <Link href={{ pathname: '/profile', query: { type: 'signup' } }}>
+        </div>
+        <div onClick={() => {
+          self.context.set('signUpOrLogIn', 'signUp')
+          self.props.router.push('/profile')
+        }}>
           <Button style={buttonStyle} onClick={() => {}} title='Sign up' />
-        </Link>
+        </div>
 
         <style jsx>{`
           .anchor {
@@ -112,4 +119,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar
+export default withRouter(Navbar)

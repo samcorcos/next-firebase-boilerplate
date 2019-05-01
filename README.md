@@ -8,6 +8,8 @@ Firebase handles user information in a way that is not always intuitive. The `fi
 
 Use Callable functions when possible (https://firebase.google.com/docs/functions/callable) as they make endpoint security much easier and cuts down on boilerplate.
 
+NOTE: This is currently broken because of Next's inability to handle `Layout` and other components that receive props.
+
 ## Quirks
 
 Everything is `display: flex; flex-direction: column;` by default
