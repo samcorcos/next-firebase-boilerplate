@@ -73,6 +73,7 @@ class Signup extends React.Component {
             <div className='title'>
               Create Account
             </div>
+            {this.state.error && <div style={{ color: 'red' }}>{this.state.error}</div>}
             <Input value={this.state.email} onChange={v => this.setState({ email: v })} placeholder='Email Address' />
             <Input type='password' value={this.state.password} onChange={v => this.setState({ password: v })} placeholder='Password' />
             <div className='chars'>
