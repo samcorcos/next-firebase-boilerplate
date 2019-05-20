@@ -2,9 +2,10 @@ import React from 'react'
 import {
   colors
 } from '@corcos/lib'
+
 import {
   Layout
-} from '@corcos/components'
+} from '../../components'
 
 class Footer extends React.Component {
   render () {

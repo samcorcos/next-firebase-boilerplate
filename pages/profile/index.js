@@ -1,11 +1,9 @@
 import React from 'react'
-import {
-  Layout
-} from '@corcos/components'
 
 import {
   Head,
   Format,
+  Layout,
   Navbar
 } from '../../components'
 import Signup from '../../components/Signup'

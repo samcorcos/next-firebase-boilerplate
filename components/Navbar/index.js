@@ -1,12 +1,13 @@
 import React from 'react'
-import {
-  Button
-} from '@corcos/components'
 import Link from 'next/link'
 import {
   colors
 } from '@corcos/lib'
 import { withRouter } from 'next/router'
+
+import {
+  Button
+} from '../../components'
 
 import Context from '../../lib/context'
 

@@ -23,7 +23,8 @@
   "dependencies": {
     "@corcos/components": "^1.19.6",
     "@corcos/lib": "^1.1.0",
-    "firebase": "^5.11.0",
+    "firebase": "^6.0.2",
+    "firestore-data": "^1.0.1",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.1.0",
     "react": "^16.8.4",

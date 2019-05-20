@@ -2,12 +2,13 @@ import React from 'react'
 import {
   colors
 } from '@corcos/lib'
+import { withRouter } from 'next/router'
+
 import {
   Layout,
   Input,
   Button
-} from '@corcos/components'
-import { withRouter } from 'next/router'
+} from '../../components'
 
 import firebase from '../../lib/firebase'
 import Context from '../../lib/context'
