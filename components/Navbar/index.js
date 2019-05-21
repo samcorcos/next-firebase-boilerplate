@@ -9,7 +9,7 @@ import {
   Button
 } from '../../components'
 
-import Context from '../../lib/context'
+import { Context } from '../../lib/context'
 
 const buttonStyle = {
   color: colors.blue[500],

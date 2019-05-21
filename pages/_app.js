@@ -2,8 +2,8 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import { AuthBindings } from '@corcos/components'
 
-import firebase from '../lib/firebase'
-import Context from '../lib/context'
+import { firebase } from '../lib/firebase'
+import { Context } from '../lib/context'
 
 import {
   Provider

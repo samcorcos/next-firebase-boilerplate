@@ -1,7 +1,7 @@
 import React from 'react'
 
-import firebase from '../../lib/firebase'
-import Context, { initialState } from '../../lib/context'
+import { firebase } from '../../lib/firebase'
+import { Context, initialState } from '../../lib/context'
 
 /**
  * This component is the Context Provider using the new React Context API that

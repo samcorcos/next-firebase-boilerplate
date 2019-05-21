@@ -11,8 +11,8 @@ import {
   Layout
 } from '../../components'
 
-import firebase from '../../lib/firebase'
-import Context from '../../lib/context'
+import { firebase } from '../../lib/firebase'
+import { Context } from '../../lib/context'
 
 /**
  * This component is used on the profile page to allow a user to sign up

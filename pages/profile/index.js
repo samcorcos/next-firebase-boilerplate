@@ -9,7 +9,7 @@ import {
 import Signup from '../../components/Signup'
 import Login from '../../components/Login'
 
-import Context from '../../lib/context'
+import { Context } from '../../lib/context'
 
 // determines what to render if the user is not logged in
 const SignUpOrLogIn = (self) => {

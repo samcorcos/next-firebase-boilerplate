@@ -10,8 +10,8 @@ import {
   Button
 } from '../../components'
 
-import firebase from '../../lib/firebase'
-import Context from '../../lib/context'
+import { firebase } from '../../lib/firebase'
+import { Context } from '../../lib/context'
 
 class Login extends React.Component {
   constructor (props) {
